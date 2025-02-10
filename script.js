@@ -1,6 +1,8 @@
+// Wait for the DOM to fully load before executing any scripts
 document.addEventListener("DOMContentLoaded", function () {
   /* ====================================================
      Mobile Navigation Toggle
+     - Toggles the "active" class on the navigation menu.
   ==================================================== */
   const mobileMenu = document.getElementById("mobile-menu");
   const navMenu = document.getElementById("nav-menu");
@@ -8,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     mobileMenu.addEventListener("click", function () {
       navMenu.classList.toggle("active");
     });
-    // Close the mobile menu when a nav link is clicked (on mobile)
+    // Close the mobile menu when a nav link is clicked on mobile
     const navLinks = document.querySelectorAll("#nav-menu li a");
     navLinks.forEach(link => {
       link.addEventListener("click", function () {
@@ -21,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ====================================================
      BIO SLIDER (Section 1)
+     - Handles dot navigation and prev/next button functionality.
   ==================================================== */
   const bioSlides = document.querySelectorAll(".bio-slide");
   const bioDotsContainer = document.getElementById("bio-dots");
@@ -41,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     bioDotsContainer.appendChild(dot);
   });
 
+  // Function to show a specific bio slide based on index
   function showBioSlide(index) {
     bioSlides.forEach((slide) => slide.classList.remove("active"));
     const bioDots = document.querySelectorAll("#bio-dots .dot");
@@ -50,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     currentBioSlideIndex = index;
   }
 
+  // Add event listener for previous button
   if (bioPrevButton) {
     bioPrevButton.addEventListener("click", function () {
       let newIndex = currentBioSlideIndex - 1;
@@ -60,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Add event listener for next button
   if (bioNextButton) {
     bioNextButton.addEventListener("click", function () {
       let newIndex = currentBioSlideIndex + 1;
@@ -78,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const projectPrevButton = document.querySelector(".project-prev");
   const projectNextButton = document.querySelector(".project-next");
 
+  // Function to display a specific project slide
   function showProjectSlide(index) {
     projectSlides.forEach(slide => slide.classList.remove("active"));
     projectSlides[index].classList.add("active");
@@ -105,6 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const workPrevButton = document.querySelector(".work-prev");
   const workNextButton = document.querySelector(".work-next");
 
+  // Function to display a specific work slide
   function showWorkSlide(index) {
     workSlides.forEach(slide => slide.classList.remove("active"));
     workSlides[index].classList.add("active");
@@ -132,6 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const volPrevButton = document.querySelector(".vol-prev");
   const volNextButton = document.querySelector(".vol-next");
 
+  // Function to display a specific volunteering slide
   function showVolSlide(index) {
     volSlides.forEach(slide => slide.classList.remove("active"));
     volSlides[index].classList.add("active");
@@ -157,6 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const eduSlides = document.querySelectorAll(".edu-slide");
   let currentEduSlide = 0;
 
+  // Function to display a specific education slide
   function showEduSlide(index) {
     eduSlides.forEach(slide => slide.classList.remove("active"));
     eduSlides[index].classList.add("active");
@@ -176,13 +186,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const galleryNextButton = document.querySelector(".gallery-next");
   let currentGalleryIndex = 0;
 
+  // Function to update gallery slides display and assign classes (left, active, right)
   function updateGallery() {
-    // Hide all slides first
+    // Hide all slides and remove any added classes
     gallerySlides.forEach(slide => {
       slide.classList.remove("left", "active", "right");
       slide.style.display = "none";
     });
-    // Calculate indices for left, center, and right slides (with wrap-around)
+    // Calculate indices for left, center, and right slides with wrap-around
     const leftIndex = (currentGalleryIndex - 1 + gallerySlides.length) % gallerySlides.length;
     const rightIndex = (currentGalleryIndex + 1) % gallerySlides.length;
     // Set classes and display styles
@@ -208,5 +219,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Initialize the gallery display
   updateGallery();
 });

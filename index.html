@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta Information -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kazi's Portfolio</title>
+  
+  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.jpg" />
+  
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css" />
+  
+  <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
+  <!-- Background Video -->
   <video id="bg-video" src="images/loop.mp4" autoplay muted loop playsinline></video>
+
   <!-- Header & Navigation -->
   <header>
     <nav class="navbar">
-      <!-- Hamburger Menu Button (Visible on Mobile) -->
+      <!-- Hamburger Menu (visible on mobile) -->
       <div class="menu-toggle" id="mobile-menu">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
       </div>
+      <!-- Main Navigation Links -->
       <ul class="nav" id="nav-menu">
         <li><a href="#bio">Bio</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -32,15 +42,18 @@
     </nav>
   </header>
 
-  <!-- Section 1: Bio (Complete)-->
+  <!-- Section 1: Bio -->
   <section id="bio">
+    <!-- Intro Text and Image -->
     <div class="bio-intro">
       <h1>Hey there!</h1>
       <img src="images/hello.gif" alt="Waving Hand" class="hand-wave" />
-      <h1>I’m Kazi</h1>  
+      <h1>I’m Kazi</h1>
     </div>
     
+    <!-- Bio Slider Container -->
     <div class="bio-slider">
+      <!-- Slide 1 -->
       <div class="bio-slide active">
         <div class="card-image">
           <img src="images/hacathon.jpg" alt="Slide Image">
@@ -100,17 +113,18 @@
         </div>
       </div>
 
-      <!-- Dot Navigation for Bio Slider -->
+      <!-- Dot Navigation (if you want to keep it; otherwise, use the next/prev buttons) -->
       <div class="slider-dots" id="bio-dots"></div>
     </div>
 
+    <!-- Bio Slider Navigation Buttons -->
     <div class="bio-nav">
       <button class="bio-prev">&#10094;</button>
       <button class="bio-next">&#10095;</button>
     </div>
   </section>
 
-  <!-- Section 2: Projects (Complete)-->
+  <!-- Section 2: Projects -->
   <section id="projects">
     <h2>Projects</h2>
     <div class="project-slider-container">
@@ -212,6 +226,7 @@
           </div>
         </div>
       </div>
+      <!-- Project Navigation Buttons (Below the Slider) -->
       <div class="project-nav">
         <button class="project-prev">&#10094;</button>
         <button class="project-next">&#10095;</button>
@@ -219,7 +234,7 @@
     </div>
   </section>
 
-  <!-- Section 3: Work Experience (Complete)-->
+  <!-- Section 3: Work Experience -->
   <section id="work">
     <h2>Work Experience</h2>
     <div class="work-slider-container">
@@ -297,6 +312,7 @@
           </div>
         </div>
       </div>
+      <!-- Work Navigation Buttons -->
       <div class="work-nav">
         <button class="work-prev">&#10094;</button>
         <button class="work-next">&#10095;</button>
@@ -304,7 +320,7 @@
     </div>
   </section>
 
-  <!-- Section 4: Volunteering Experience (Complete)-->
+  <!-- Section 4: Volunteering Experience -->
   <section id="volunteering">
     <h2>Volunteering Experience</h2>
     <div class="vol-slider-container">
@@ -361,6 +377,7 @@
           </div>
         </div>
       </div>
+      <!-- Volunteering Navigation Buttons -->
       <div class="vol-nav">
         <button class="vol-prev">&#10094;</button>
         <button class="vol-next">&#10095;</button>
@@ -368,7 +385,7 @@
     </div>
   </section>
 
-  <!-- Section 5: Education (Complete)-->
+  <!-- Section 5: Education -->
   <section id="education">
     <h2>Education</h2>
     <div class="edu-slider">
@@ -395,52 +412,48 @@
     </div>
   </section>
 
- <!-- Section 6: Hobbies & Interests (Gallery) -->
-<section id="hobbies">
-  <h2>Hobbies &amp; Interests</h2>
-  <div class="gallery-slider-container">
-    <div class="gallery-slider">
-      <!-- Add your 9 images here -->
-      <div class="gallery-slide">
-        <img src="images/Eartgrul.jpg" alt="Image 1">
-      </div>
-      <div class="gallery-slide">
-        <img src="images/liberty_back.jpg" alt="Image 2">
-      </div>
-      <div class="gallery-slide">
-        <img src="images/liberty_front.jpg" alt="Image 3">
-      </div>
-      <div class="gallery-slide">
-        <img src="images/NY.jpg" alt="Image 4">
-      </div>
-      <div class="gallery-slide">
-        <img src="images/tesla.jpg" alt="Image 5">
-      </div>
-      <div class="gallery-slide">
-        <img src="images/india.jpg" alt="Image 6">
-      </div>
-      <div class="gallery-slide">
-        <img src="images/steak.jpg" alt="Image 7">
-      </div>
-      <div class="gallery-slide">
-        <img src="images/shrimp.jpg" alt="Image 8">
-      </div>
-      <div class="gallery-slide">
-        <img src="images/burger.jpg" alt="Image 9">
+  <!-- Section 6: Hobbies & Interests (Gallery) -->
+  <section id="hobbies">
+    <h2>Hobbies &amp; Interests</h2>
+    <div class="gallery-slider-container">
+      <div class="gallery-slider">
+        <!-- Add your 9 images here -->
+        <div class="gallery-slide">
+          <img src="images/Eartgrul.jpg" alt="Image 1">
+        </div>
+        <div class="gallery-slide">
+          <img src="images/liberty_back.jpg" alt="Image 2">
+        </div>
+        <div class="gallery-slide">
+          <img src="images/liberty_front.jpg" alt="Image 3">
+        </div>
+        <div class="gallery-slide">
+          <img src="images/NY.jpg" alt="Image 4">
+        </div>
+        <div class="gallery-slide">
+          <img src="images/tesla.jpg" alt="Image 5">
+        </div>
+        <div class="gallery-slide">
+          <img src="images/india.jpg" alt="Image 6">
+        </div>
+        <div class="gallery-slide">
+          <img src="images/steak.jpg" alt="Image 7">
+        </div>
+        <div class="gallery-slide">
+          <img src="images/shrimp.jpg" alt="Image 8">
+        </div>
+        <div class="gallery-slide">
+          <img src="images/burger.jpg" alt="Image 9">
+        </div>
       </div>
     </div>
-  </div>
-  <!-- Navigation buttons placed below the gallery slider container -->
-  <div class="gallery-nav">
-    <button class="gallery-prev">&#10094;</button>
-    <button class="gallery-next">&#10095;</button>
-  </div>
-  <p class="gallery-caption">I like food and exploration</p>
-</section>
-
-
-
-
+    <!-- Gallery Navigation Buttons -->
+    <div class="gallery-nav">
+      <button class="gallery-prev">&#10094;</button>
+      <button class="gallery-next">&#10095;</button>
+    </div>
+    <p class="gallery-caption">I like food and exploration</p>
+  </section>
 
   <!-- Section 7: Resume -->
   <section id="resume">
@@ -469,6 +482,7 @@
     </div>
   </footer>
 
+  <!-- JavaScript File -->
   <script src="script.js"></script>
 </body>
 </html>

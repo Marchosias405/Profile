@@ -101,16 +101,18 @@ section {
 
 /* Bio Intro */
 .bio-intro {
-  text-align: center;
-  margin-bottom: 40px;
+  display: flex;
+  align-items: center; /* Aligns items vertically */
+  justify-content: center; /* Centers content horizontally */
+  gap: 20px; /* Adjusts spacing between items */
+  flex-wrap: wrap; /* Ensures responsiveness */
 }
 
-/* Resize the hand-wave GIF */
 .hand-wave {
-  width: 100px;
+  width: 80px; /* Adjust size as needed */
   height: auto;
-  vertical-align: middle;
 }
+
 
 /* ============================== */
 /*     BIO SLIDER (Card Layout)   */

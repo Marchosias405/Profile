@@ -192,9 +192,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   updateGallery();
 
-  /* ====================================================
-     BACKGROUND VIDEO
-     (The video element with id="bg-video" plays on loop based on its HTML attributes.)
-  ==================================================== */
-  // No JavaScript is required for the background video since it's set to autoplay, muted, loop, and playsinline in HTML.
+
 });

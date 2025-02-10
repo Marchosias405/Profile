@@ -571,7 +571,7 @@ section {
   height: 300px; /* Adjust height as needed */
   overflow: hidden;
   border-radius: 10px;
-  background: #f4f4f4; /* Optional: match the background or container color */
+  background: transparent;  /* Transparent so the background video shows through */
 }
 
 .gallery-slider {
@@ -579,63 +579,47 @@ section {
   height: 100%;
 }
 
-/* Each slide will be 30% width to leave gaps between images */
+/* Each slide is 30% width */
 .gallery-slide {
   position: absolute;
   width: 30%;
   height: 100%;
   transition: all 0.5s ease;
-  opacity: 0;
   display: none;
-  /* Ensure a small gap: we'll position them manually */
 }
 
-/* Left slide: positioned at left: 0, with a vertical offset */
+/* LEFT SLIDE */
 .gallery-slide.left {
   left: 0;
-  top: 20px; /* Lower than center */
-  opacity: 0.5;
+  top: 20px; /* Adjust vertical offset as needed */
   display: block;
+  /* Overall lower opacity for side images */
+  opacity: 0.7;
+  /* Apply a mask: left 45% is faded out (transparent), then transitions to fully visible */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 45%, black 55%, black 100%);
+  mask-image: linear-gradient(to right, transparent 0%, transparent 45%, black 55%, black 100%);
 }
 
-/* Center slide: positioned at left: 35%, no vertical offset */
+/* CENTER SLIDE (Active) */
 .gallery-slide.active {
   left: 35%;
   top: 0;
-  opacity: 1;
   z-index: 2;
   display: block;
+  opacity: 1;  /* Fully opaque */
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 
-/* Right slide: positioned at left: 70%, with a vertical offset */
+/* RIGHT SLIDE */
 .gallery-slide.right {
   left: 70%;
-  top: 20px; /* Lower than center */
-  opacity: 0.5;
+  top: 20px; /* Adjust vertical offset as needed */
   display: block;
-}
-
-/* Fade-out effect using pseudo-elements on the outer sides */
-.gallery-slide.left::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(to right, rgba(244,244,244,1), rgba(244,244,244,0));
-  pointer-events: none;
-}
-
-.gallery-slide.right::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(to left, rgba(244,244,244,1), rgba(244,244,244,0));
-  pointer-events: none;
+  opacity: 0.7;  /* Lower overall opacity for side image */
+  /* Apply a mask: right 45% is faded out (transparent), then transitions to fully visible */
+  -webkit-mask-image: linear-gradient(to left, transparent 0%, transparent 45%, black 55%, black 100%);
+  mask-image: linear-gradient(to left, transparent 0%, transparent 45%, black 55%, black 100%);
 }
 
 .gallery-slide img {
@@ -670,15 +654,17 @@ section {
   right: 10px;
 }
 
-
-
+/* Gallery Caption: text set to black */
 .gallery-caption {
   text-align: center;
-  font-size: 20px; /* Adjust to be smaller than h2 but larger than regular text */
+  font-size: 20px; /* Adjust as needed */
   font-weight: bold;
-  margin-top: 15px; /* Adds space between the gallery and the text */
-  color: #333; /* Match color with other text */
+  margin-top: 15px;
+  color: #000;
 }
+
+
+
 
 
 

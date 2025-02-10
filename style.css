@@ -12,6 +12,18 @@ body {
   color: #333;
 }
 
+
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+
+body {
+  font-family: 'Pacifico', cursive;
+  line-height: 1.5; /* Space between lines */
+  letter-spacing: 0.5px; /* Space between letters */
+}
+
+
 /* ============================== */
 /*         NAVIGATION BAR         */
 /* ============================== */
@@ -730,6 +742,24 @@ footer {
     padding: 25px;
   }
 }
+
+
+
+/* Option 1: Subtle upward lift with a thicker, darker drop shadow all around */
+.bio-slide:hover,
+.project-slide:hover,
+.work-slide:hover,
+.vol-slide:hover,
+.edu-slide:hover,
+.gallery-slide:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+
 
 @media (max-width: 600px) {
   /* Reduce overall height on small screens */

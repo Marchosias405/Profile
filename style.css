@@ -17,6 +17,21 @@ body {
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 
+body {
+  font-family: 'Pacifico', cursive;
+}
+
+
+.card-text, 
+.project-text, 
+.work-text, 
+.vol-text, 
+.edu-text, 
+.gallery-caption {
+  font-family: 'Arial', sans-serif;  /* Readable body font for slide content */
+}
+
+
 h1 {
   font-family: 'Pacifico', cursive;
   font-size: 2.5rem;  /* Large size for main titles */
@@ -31,6 +46,8 @@ h3 {
   font-family: 'Pacifico', cursive;
   font-size: 1.5rem;  /* Smallest heading */
 }
+
+
 
 
 /* ============================== */

@@ -432,6 +432,29 @@ section {
 
 
 
+
+
+.experience-button {
+  display: block;           /* Make the button a block-level element */
+  margin: 10px auto;        /* Center it horizontally */
+  padding: 8px 16px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  text-align: center;       /* Center the text inside the button */
+}
+
+.experience-button:hover {
+  background-color: #555;
+}
+
+
+
+
+
 /* ------------------ */
 /*   Volenteer Text Area   */
 /* ------------------ */

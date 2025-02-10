@@ -121,3 +121,39 @@ document.addEventListener("DOMContentLoaded", function () {
       showWorkSlide(currentWorkSlide);
     });
   }
+
+
+
+
+
+
+
+
+   /* ----------------------------------
+         VOLUNTEERING SLIDER (Section 4)
+  ---------------------------------- */
+  const volSlides = document.querySelectorAll(".vol-slide");
+  let currentVolSlide = 0;
+  const volPrevButton = document.querySelector(".vol-prev");
+  const volNextButton = document.querySelector(".vol-next");
+
+  function showVolSlide(index) {
+    volSlides.forEach(slide => slide.classList.remove("active"));
+    volSlides[index].classList.add("active");
+  }
+
+  if (volPrevButton) {
+    volPrevButton.addEventListener("click", function () {
+      currentVolSlide =
+        (currentVolSlide - 1 + volSlides.length) % volSlides.length;
+      showVolSlide(currentVolSlide);
+    });
+  }
+
+  if (volNextButton) {
+    volNextButton.addEventListener("click", function () {
+      currentVolSlide =
+        (currentVolSlide + 1) % volSlides.length;
+      showVolSlide(currentVolSlide);
+    });
+  }

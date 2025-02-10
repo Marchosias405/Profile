@@ -78,22 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  
-
-  updateGallery();
-});
-
-
-
-
-
-
-
-
-
-
-
- /* ----------------------------------
+  /* ----------------------------------
          WORK SLIDER (Section 3)
   ---------------------------------- */
   const workSlides = document.querySelectorAll(".work-slide");
@@ -122,14 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-
-
-
-
-
-
-
-   /* ----------------------------------
+  /* ----------------------------------
          VOLUNTEERING SLIDER (Section 4)
   ---------------------------------- */
   const volSlides = document.querySelectorAll(".vol-slide");
@@ -158,11 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-
-
-
-
-   /* ----------------------------------
+  /* ----------------------------------
          EDUCATION SLIDER (Section 5)
   ---------------------------------- */
   const eduSlides = document.querySelectorAll(".edu-slide");
@@ -177,3 +151,47 @@ document.addEventListener("DOMContentLoaded", function () {
     currentEduSlide = (currentEduSlide + 1) % eduSlides.length;
     showEduSlide(currentEduSlide);
   }, 5000);
+
+  /* ----------------------------------
+         GALLERY SLIDER (Section 6)
+         Three images visible: left, center, right.
+  ---------------------------------- */
+  const gallerySlides = document.querySelectorAll(".gallery-slide");
+  const galleryPrevButton = document.querySelector(".gallery-prev");
+  const galleryNextButton = document.querySelector(".gallery-next");
+  let currentGalleryIndex = 0;
+
+  function updateGallery() {
+    // Hide all slides first
+    gallerySlides.forEach(slide => {
+      slide.classList.remove("left", "active", "right");
+      slide.style.display = "none";
+    });
+    // Calculate indices for left, center, and right slides (with wrap-around)
+    const leftIndex = (currentGalleryIndex - 1 + gallerySlides.length) % gallerySlides.length;
+    const rightIndex = (currentGalleryIndex + 1) % gallerySlides.length;
+    // Assign classes and display the slides
+    gallerySlides[leftIndex].classList.add("left");
+    gallerySlides[leftIndex].style.display = "block";
+    gallerySlides[currentGalleryIndex].classList.add("active");
+    gallerySlides[currentGalleryIndex].style.display = "block";
+    gallerySlides[rightIndex].classList.add("right");
+    gallerySlides[rightIndex].style.display = "block";
+  }
+
+  if(galleryPrevButton) {
+    galleryPrevButton.addEventListener("click", function(){
+      currentGalleryIndex = (currentGalleryIndex - 1 + gallerySlides.length) % gallerySlides.length;
+      updateGallery();
+    });
+  }
+
+  if(galleryNextButton) {
+    galleryNextButton.addEventListener("click", function(){
+      currentGalleryIndex = (currentGalleryIndex + 1) % gallerySlides.length;
+      updateGallery();
+    });
+  }
+
+  updateGallery();
+});

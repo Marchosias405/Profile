@@ -184,7 +184,6 @@ section {
   width: 90%;
   max-width: 800px;
   margin: 0 auto 40px;
-  /* Removed side padding as nav is now below */
 }
 
 .project-slider {
@@ -307,7 +306,6 @@ section {
   width: 90%;
   max-width: 800px;
   margin: 0 auto 40px;
-  /* Removed side padding as nav is now below */
   height: 500px;
 }
 
@@ -548,26 +546,25 @@ section {
   border-radius: 10px;
 }
 
-.gallery-prev,
-.gallery-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
+/* Gallery Slider Navigation - Below Slides */
+.gallery-nav {
+  text-align: center;
+  margin-top: 10px;
+}
+.gallery-nav button {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.5);
   color: #fff;
   border: none;
-  padding: 10px;
+  padding: 10px 15px;
   cursor: pointer;
-  border-radius: 50%;
-  z-index: 3;
+  border-radius: 5px;
+  margin: 0 10px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
 }
-
-.gallery-prev {
-  left: 10px;
-}
-
-.gallery-next {
-  right: 10px;
+.gallery-nav button:hover {
+  background: #555;
 }
 
 .gallery-caption {
@@ -605,7 +602,6 @@ section {
   border-radius: 5px;
   transition: background 0.3s ease;
 }
-
 .resume-link:hover {
   background: #555;
 }
@@ -649,7 +645,6 @@ footer {
   gap: 8px;
   transition: color 0.3s ease;
 }
-
 .social-media a:hover {
   color: #ddd;
 }

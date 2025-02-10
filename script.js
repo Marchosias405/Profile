@@ -82,3 +82,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
   updateGallery();
 });
+
+
+
+
+
+
+
+
+
+
+
+ /* ----------------------------------
+         WORK SLIDER (Section 3)
+  ---------------------------------- */
+  const workSlides = document.querySelectorAll(".work-slide");
+  let currentWorkSlide = 0;
+  const workPrevButton = document.querySelector(".work-prev");
+  const workNextButton = document.querySelector(".work-next");
+
+  function showWorkSlide(index) {
+    workSlides.forEach(slide => slide.classList.remove("active"));
+    workSlides[index].classList.add("active");
+  }
+
+  if (workPrevButton) {
+    workPrevButton.addEventListener("click", function () {
+      currentWorkSlide =
+        (currentWorkSlide - 1 + workSlides.length) % workSlides.length;
+      showWorkSlide(currentWorkSlide);
+    });
+  }
+
+  if (workNextButton) {
+    workNextButton.addEventListener("click", function () {
+      currentWorkSlide =
+        (currentWorkSlide + 1) % workSlides.length;
+      showWorkSlide(currentWorkSlide);
+    });
+  }

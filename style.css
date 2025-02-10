@@ -332,6 +332,122 @@ section {
 
 
 
+/* ============================== */
+/*  WORK & VOLUNTEERING SLIDERS   */
+/* ============================== */
+/* Fixed container with absolute-positioned slides */
+.work-slider-container,
+.vol-slider-container {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  padding: 0 50px; /* Keep slide content away from navigation buttons */
+  height: 500px;   /* Fixed height for consistent slide positioning */
+}
+
+.work-slider,
+.vol-slider {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.work-slide,
+.vol-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* Remove bottom padding since we'll control the text container separately */
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.work-slide.active,
+.vol-slide.active {
+  display: block;
+}
+
+/* Ensure each work slide has relative positioning */
+.work-slide {
+  position: relative;
+}
+
+/* ------------------ */
+/*   Work Text Area   */
+/* ------------------ */
+.work-text {
+  position: absolute;
+  top: 140px;  /* Set this so the text starts below the logo (adjust as needed) */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  background: rgba(249, 249, 249, 0.9); /* Optional semi-transparent background for readability */
+  overflow-y: auto;
+}
+
+/* Round logo for work slides */
+.round-logo {
+  display: block;
+  margin: 20px auto 10px;  /* Increased top margin to add extra space */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+/* Headings inside work slide */
+.work-slide h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Paragraphs and lists in work-text */
+.work-text p,
+.work-text ul {
+  margin: 10px 0;
+  text-align: left;
+}
+
+.work-text ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+/* ------------------------------ */
+/*  Navigation Buttons for Work   */
+/* ------------------------------ */
+.work-prev,
+.work-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+/* Position buttons outside the fixed container */
+.work-prev {
+  left: -40px;
+}
+
+.work-next {
+  right: -40px;
+}
+
+
+
 
 
 

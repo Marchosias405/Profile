@@ -157,3 +157,23 @@ document.addEventListener("DOMContentLoaded", function () {
       showVolSlide(currentVolSlide);
     });
   }
+
+
+
+
+
+   /* ----------------------------------
+         EDUCATION SLIDER (Section 5)
+  ---------------------------------- */
+  const eduSlides = document.querySelectorAll(".edu-slide");
+  let currentEduSlide = 0;
+
+  function showEduSlide(index) {
+    eduSlides.forEach(slide => slide.classList.remove("active"));
+    eduSlides[index].classList.add("active");
+  }
+
+  setInterval(() => {
+    currentEduSlide = (currentEduSlide + 1) % eduSlides.length;
+    showEduSlide(currentEduSlide);
+  }, 5000);

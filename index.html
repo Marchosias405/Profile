@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kazi's Portfolio</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.jpg" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header>
+    <nav class="navbar">
+      <!-- Hamburger Menu Button (Visible on Mobile) -->
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav" id="nav-menu">
+        <li><a href="#bio">Bio</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#work">Work Experience</a></li>
+        <li><a href="#volunteering">Volunteering</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#resume">Resume</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+
+
+
+
+  <!-- Section 1: Bio (Complete)--> 
+  <section id="bio">
+    <div class="bio-intro">
+      <h1>
+        Hey there!
+        
+      </h1>
+
+      <img
+          src="images/hi.gif"
+          alt="Waving Hand"
+          class="hand-wave"
+        />
+
+      <h1>I’m Kazi</h1>  
+    </div>
+
+    <!-- Faded Gallery Slider (with dot navigation) -->
+    <div class="bio-slider">
+      <!-- Slide 1 -->
+      <div class="bio-slide active"> <!-- add "active" on the initial slide -->
+        <div class="card-image">
+          <img src="images/hacathon.jpg" alt="Slide Image">
+        </div>
+        <div class="card-text">
+          <p>About Me:</p>
+          <p>🖥️ I am a Computing Science student from SFU.</p>
+          <p>🔐 I plan to specialize in cybersecurity and IT compliance.</p>
+          <p>🥅 I am a team player and goal-driven. </p>
+        </div>
+      </div>
+      
+      <!-- Slide 2 -->
+
+      <div class="bio-slide">
+        <div class="card-image">
+          <img src="images/cyber.gif" alt="Cybersecurity">
+        </div>
+        <div class="card-text">
+          <p>
+            🔹 Why I am pursuing Security &amp; Tech?<br />
+            ✅ Certified ISMS ISO/IEC 27001:2022 Lead Auditor, helping businesses keep their data safe<br />
+            📊 I am currently pursuing my CISA certification to dive deeper into IT auditing, risk management, and compliance<br />
+            💡 Passionate about bridging technology and security to create efficient, secure systems 
+          </p>
+        </div>
+      </div>
+
+
+      <!-- Slide 3 -->
+
+      <div class="bio-slide">
+        <div class="card-image">
+          <img src="images/bsi_award.jpg" alt="Slide 3">
+        </div>
+        <div class="card-text">
+          <p>
+            🔹 What I’ve Built &amp; Done:<br />
+            ⚛️ Developed React-based web apps with API integrations<br />
+            🏆 Led teams in international physics competitions and participated in hackathons <br />
+            🚀 Founded my school’s first IT club and spearheaded multiple projects <br />
+            🌍 Co-founded Surge Studios, managing WordPress hosting, client relations, and digital solutions <br />
+            🤝 Took on leadership roles in volunteer initiatives, including organizing flood relief campaigns and managing a 2,000-member educational community 
+          </p>
+        </div>
+      </div>
+
+
+      <!-- Slide 4 -->
+
+      <div class="bio-slide">
+        <div class="card-image">
+          <img src="images/stage_CID.jpg" alt="Slide 4">
+        </div>
+        <div class="card-text">
+          <p>
+            🔹 Beyond Tech:<br />
+            🗣️ I speak four languages: English, Bengali, Hindi, and Urdu<br />
+            🥐 I am mastering my fifth language (almost at A2 level!)<br />
+            🧩 Always excited to learn, collaborate, and take on new challenges
+          </p>
+        </div>
+      </div>
+
+
+      <!-- Dot Navigation for Bio Slider -->
+      <div class="slider-dots" id="bio-dots"></div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>

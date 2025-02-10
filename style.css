@@ -1,0 +1,231 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f4f4f4;
+  color: #333;
+}
+
+
+/* ============================== */
+/*         NAVIGATION BAR         */
+/* ============================== */
+header {
+  background: #333;
+  color: #fff;
+  padding: 0 20px;           /* Remove vertical padding to control height */
+  height: 60px;              /* Fixed header height */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  position: relative;        /* For absolute positioning of hamburger */
+  width: 100%;
+  display: flex;
+  justify-content: center;   /* Center the nav list on desktop */
+  align-items: center;
+}
+
+/* Hamburger Menu (desktop hidden) */
+.menu-toggle {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;             /* Shown on mobile only */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  margin: 4px 0;
+}
+
+/* Navigation List (ul) */
+.nav {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0 auto;
+}
+
+/* Navigation Items */
+.nav li {
+  margin: 0;
+}
+
+/* Navigation Links */
+.nav li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: color 0.3s ease;
+}
+
+.nav li a:hover {
+  text-decoration: underline;
+  color: #ddd;
+}
+
+
+/* ======================== */
+/*        SECTIONS          */
+/* ======================== */
+
+section h2, 
+section h3 {
+  text-align: center;
+  font-size: 24px; /* Adjust size as needed */
+  margin-bottom: 20px;
+}
+
+section {
+  padding: 80px 20px; /* space for the fixed nav */
+  margin-top: 60px;
+}
+
+/* Bio Intro */
+.bio-intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Resize the hand-wave GIF */
+.hand-wave {
+  width: 100px;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* ============================== */
+/*     BIO SLIDER (Card Layout)   */
+/* ============================== */
+.bio-slider {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.bio-slide {
+  display: none; /* Hide all slides initially */
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  height: auto;
+  max-height: 700px;
+  margin-bottom: 20px;
+}
+
+.bio-slide.active {
+  display: flex; /* Only the active slide is shown */
+}
+
+/* Image container inside Bio slide */
+.bio-slide .card-image {
+  flex: 1;
+  overflow: hidden;
+  max-height: 500px;
+}
+
+.bio-slide .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* Fill the container (may crop a bit) */
+  object-position: center;
+  display: block;
+}
+
+/* Text container inside Bio slide */
+.bio-slide .card-text {
+  padding: 10px;
+  font-size: 16px;
+  overflow: auto;
+  line-height: 1.4;
+  background: #f9f9f9;
+}
+
+/* ============================== */
+/*    DOT NAVIGATION (Bio & Hobbies) */
+/* ============================== */
+.slider-dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.slider-dots .dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 2s ease;
+}
+
+.slider-dots .dot.active {
+  background-color: #717171;
+}
+
+
+
+
+/* ============================== */
+/*      RESPONSIVE STYLES         */
+/* ============================== */
+@media (max-width: 768px) {
+  header {
+    height: 60px;            /* Maintain fixed header height */
+  }
+  
+  /* Show the hamburger on mobile */
+  .menu-toggle {
+    display: flex;
+  }
+  
+  /* Hide the nav list by default on mobile */
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #333;
+    position: absolute;
+    top: 60px;               /* Dropdown appears directly below header */
+    left: 0;
+    z-index: 999;
+    border-radius: 8px;
+  }
+  
+  /* Show nav list when active */
+  .nav.active {
+    display: flex;
+  }
+  
+  .nav li {
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  /* Adjust navbar container to space out the hamburger and the centered content */
+  .navbar {
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+}

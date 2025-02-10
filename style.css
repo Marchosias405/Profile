@@ -17,10 +17,12 @@ body {
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 
-body {
+h1, h2, h3 {
   font-family: 'Pacifico', cursive;
-  line-height: 1.5; /* Space between lines */
-  letter-spacing: 0.5px; /* Space between letters */
+}
+
+body, p, li, a {
+  font-family: 'Arial', sans-serif; /* More readable font for body text */
 }
 
 

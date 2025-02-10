@@ -95,7 +95,7 @@ section h3 {
 }
 
 section {
-  padding: 80px 20px; /* space for the fixed nav */
+  padding: 20px 20px; /* space for the fixed nav */
   margin-top: 60px;
 }
 
@@ -425,11 +425,11 @@ section {
 
 /* Position buttons outside the fixed container */
 .work-prev {
-  left: -40px;
+  left: -10px;
 }
 
 .work-next {
-  right: -40px;
+  right: -10px;
 }
 
 

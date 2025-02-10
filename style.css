@@ -17,12 +17,19 @@ body {
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 
-h1, h2, h3 {
+h1 {
   font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;  /* Large size for main titles */
 }
 
-body, p, li, a {
-  font-family: 'Arial', sans-serif; /* More readable font for body text */
+h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;  /* Slightly smaller for section headings */
+}
+
+h3 {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.5rem;  /* Smallest heading */
 }
 
 

@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     mobileMenu.addEventListener("click", function () {
       navMenu.classList.toggle("active");
     });
-    // Close the mobile menu when a nav link is clicked
+    // Close the mobile menu when a nav link is clicked (on mobile)
     const navLinks = document.querySelectorAll("#nav-menu li a");
     navLinks.forEach(link => {
       link.addEventListener("click", function () {
@@ -24,13 +24,17 @@ document.addEventListener("DOMContentLoaded", function () {
   ==================================================== */
   const bioSlides = document.querySelectorAll(".bio-slide");
   const bioDotsContainer = document.getElementById("bio-dots");
-  let currentBioSlide = 0;
+  const bioPrevButton = document.querySelector(".bio-prev");
+  const bioNextButton = document.querySelector(".bio-next");
+  let currentBioSlideIndex = 0;
 
   // Create dot navigation for the Bio slider
   bioSlides.forEach((slide, index) => {
     const dot = document.createElement("span");
     dot.classList.add("dot");
-    if (index === 0) dot.classList.add("active");
+    if (index === 0) {
+      dot.classList.add("active");
+    }
     dot.addEventListener("click", function () {
       showBioSlide(index);
     });
@@ -38,12 +42,32 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function showBioSlide(index) {
-    bioSlides.forEach(slide => slide.classList.remove("active"));
+    bioSlides.forEach((slide) => slide.classList.remove("active"));
     const bioDots = document.querySelectorAll("#bio-dots .dot");
-    bioDots.forEach(dot => dot.classList.remove("active"));
+    bioDots.forEach((dot) => dot.classList.remove("active"));
     bioSlides[index].classList.add("active");
     bioDots[index].classList.add("active");
-    currentBioSlide = index;
+    currentBioSlideIndex = index;
+  }
+
+  if (bioPrevButton) {
+    bioPrevButton.addEventListener("click", function () {
+      let newIndex = currentBioSlideIndex - 1;
+      if (newIndex < 0) {
+        newIndex = bioSlides.length - 1;
+      }
+      showBioSlide(newIndex);
+    });
+  }
+
+  if (bioNextButton) {
+    bioNextButton.addEventListener("click", function () {
+      let newIndex = currentBioSlideIndex + 1;
+      if (newIndex >= bioSlides.length) {
+        newIndex = 0;
+      }
+      showBioSlide(newIndex);
+    });
   }
 
   /* ====================================================
@@ -61,16 +85,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (projectPrevButton) {
     projectPrevButton.addEventListener("click", function () {
-      currentProjectSlide =
-        (currentProjectSlide - 1 + projectSlides.length) % projectSlides.length;
+      currentProjectSlide = (currentProjectSlide - 1 + projectSlides.length) % projectSlides.length;
       showProjectSlide(currentProjectSlide);
     });
   }
 
   if (projectNextButton) {
     projectNextButton.addEventListener("click", function () {
-      currentProjectSlide =
-        (currentProjectSlide + 1) % projectSlides.length;
+      currentProjectSlide = (currentProjectSlide + 1) % projectSlides.length;
       showProjectSlide(currentProjectSlide);
     });
   }
@@ -90,16 +112,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (workPrevButton) {
     workPrevButton.addEventListener("click", function () {
-      currentWorkSlide =
-        (currentWorkSlide - 1 + workSlides.length) % workSlides.length;
+      currentWorkSlide = (currentWorkSlide - 1 + workSlides.length) % workSlides.length;
       showWorkSlide(currentWorkSlide);
     });
   }
 
   if (workNextButton) {
     workNextButton.addEventListener("click", function () {
-      currentWorkSlide =
-        (currentWorkSlide + 1) % workSlides.length;
+      currentWorkSlide = (currentWorkSlide + 1) % workSlides.length;
       showWorkSlide(currentWorkSlide);
     });
   }
@@ -119,16 +139,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (volPrevButton) {
     volPrevButton.addEventListener("click", function () {
-      currentVolSlide =
-        (currentVolSlide - 1 + volSlides.length) % volSlides.length;
+      currentVolSlide = (currentVolSlide - 1 + volSlides.length) % volSlides.length;
       showVolSlide(currentVolSlide);
     });
   }
 
   if (volNextButton) {
     volNextButton.addEventListener("click", function () {
-      currentVolSlide =
-        (currentVolSlide + 1) % volSlides.length;
+      currentVolSlide = (currentVolSlide + 1) % volSlides.length;
       showVolSlide(currentVolSlide);
     });
   }
@@ -159,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentGalleryIndex = 0;
 
   function updateGallery() {
-    // Hide all slides and remove positioning classes
+    // Hide all slides first
     gallerySlides.forEach(slide => {
       slide.classList.remove("left", "active", "right");
       slide.style.display = "none";
@@ -167,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Calculate indices for left, center, and right slides (with wrap-around)
     const leftIndex = (currentGalleryIndex - 1 + gallerySlides.length) % gallerySlides.length;
     const rightIndex = (currentGalleryIndex + 1) % gallerySlides.length;
-    // Assign classes and display the slides
+    // Set classes and display styles
     gallerySlides[leftIndex].classList.add("left");
     gallerySlides[leftIndex].style.display = "block";
     gallerySlides[currentGalleryIndex].classList.add("active");
@@ -191,6 +209,4 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   updateGallery();
-
-
 });

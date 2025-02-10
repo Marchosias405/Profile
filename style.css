@@ -18,8 +18,8 @@ body {
 header {
   background: #333;
   color: #fff;
-  padding: 0 20px;           /* Remove vertical padding to control height */
-  height: 60px;              /* Fixed header height */
+  padding: 0 20px;  /* Remove vertical padding to control height */
+  height: 60px;     /* Fixed header height */
   position: fixed;
   width: 100%;
   top: 0;
@@ -29,10 +29,10 @@ header {
 }
 
 .navbar {
-  position: relative;        /* For absolute positioning of hamburger */
+  position: relative; /* For absolute positioning of hamburger */
   width: 100%;
   display: flex;
-  justify-content: center;   /* Center the nav list on desktop */
+  justify-content: center;  /* Center the nav list on desktop */
   align-items: center;
 }
 
@@ -41,7 +41,7 @@ header {
   left: 20px;
   top: 50%;
   transform: translateY(-50%);
-  display: none;             /* Shown on mobile only */
+  display: none;  /* Shown on mobile only */
   flex-direction: column;
   cursor: pointer;
 }
@@ -88,21 +88,21 @@ section h3 {
 }
 
 section {
-  padding: 20px 20px; /* space for the fixed nav */
+  padding: 20px;
   margin-top: 60px;
 }
 
 /* Bio Intro */
 .bio-intro {
   display: flex;
-  align-items: center; /* Align items vertically */
-  justify-content: center; /* Center content horizontally */
-  gap: 20px; /* Adjust spacing between items */
-  flex-wrap: wrap; /* Ensure responsiveness */
+  align-items: center;         /* Align items vertically */
+  justify-content: center;     /* Center content horizontally */
+  gap: 20px;                   /* Adjust spacing between items */
+  flex-wrap: wrap;             /* Ensure responsiveness */
 }
 
 .hand-wave {
-  width: 80px; /* Adjust size as needed */
+  width: 80px;                 /* Adjust size as needed */
   height: auto;
 }
 
@@ -113,67 +113,83 @@ section {
   width: 90%;
   max-width: 800px;
   margin: 0 auto 40px;
+  height: 700px;  /* Fixed height – adjust as needed */
+  position: relative;
+  overflow: hidden;
 }
 
+/* Make each bio slide a flex container in column direction.
+   They are positioned absolutely so that the container's height remains constant. */
 .bio-slide {
-  display: none; /* Hide all slides initially */
+  display: flex;
   flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   background: #fff;
-  height: auto;
-  max-height: 700px;
-  margin-bottom: 20px;
+  display: none; /* Hide non-active slides */
 }
 
 .bio-slide.active {
-  display: flex; /* Only the active slide is shown */
+  display: flex;
 }
 
+/* Set the image area to 75% of the slide */
 .card-image {
-  flex: 1;
+  width: 100%;
+  height: 75%;
   overflow: hidden;
-  max-height: 500px;
 }
 
 .card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* Fill the container (may crop a bit) */
+  object-fit: cover;
   object-position: center;
   display: block;
 }
 
+/* Set the text area to 25% of the slide with reduced padding */
 .card-text {
-  padding: 10px;
+  height: 25%;
+  padding: 5px;
   font-size: 16px;
   overflow: auto;
   line-height: 1.4;
   background: #f9f9f9;
 }
 
-/* ============================== */
-/*    DOT NAVIGATION (Bio & Hobbies) */
-/* ============================== */
-.slider-dots {
+/* On smaller screens, adjust the image so it isn’t overly cropped */
+@media (max-width: 768px) {
+  .card-image img {
+    object-fit: contain;
+  }
+}
+
+/* Bio Slider Navigation – Prev/Next Buttons */
+.bio-nav {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 5px;
 }
-
-.slider-dots .dot {
-  cursor: pointer;
-  height: 12px;
-  width: 12px;
-  margin: 0 4px;
-  background-color: #bbb;
-  border-radius: 50%;
+.bio-nav button {
   display: inline-block;
-  transition: background-color 2s ease;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 10px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
 }
-
-.slider-dots .dot.active {
-  background-color: #717171;
+.bio-nav button:hover {
+  background: #555;
 }
 
 /* ============================== */
@@ -188,23 +204,27 @@ section {
 
 .project-slider {
   overflow: hidden;
-  margin-bottom: 20px; /* Space for navigation buttons */
+  margin-bottom: 10px; /* Space for navigation buttons */
+  height: 600px;       /* Fixed height – adjust as needed */
+  position: relative;
 }
 
 .project-slide {
-  display: none;
-  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   background: #fff;
-  max-height: 800px;
-  margin-bottom: 20px;
-  text-align: center;
+  display: none;
 }
 
 .project-slide.active {
   display: flex;
+  flex-direction: column;
 }
 
 .project-image {
@@ -216,18 +236,25 @@ section {
 .project-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Show the whole image without cropping */
+  object-fit: contain;
   object-position: center;
   display: block;
 }
 
+/* Make project-text a flex container with column direction.
+   This allows the link (and logos) to be pushed to the bottom if content is short. */
 .project-text {
-  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
   padding: 20px;
   font-size: 16px;
   line-height: 1.5;
   background: #f9f9f9;
   text-align: left;
+}
+
+.project-text a.project-link {
+  margin-top: auto; /* Pushes the link (and any subsequent logos) to the bottom */
 }
 
 .project-text a {
@@ -264,22 +291,22 @@ section {
 }
 
 .project-link {
-  display: inline-block;
-  margin-top: 10px;
   padding: 8px 15px;
   background: #333;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .project-link:hover {
   background: #555;
 }
 
-/* Project Slider Navigation - Below Slides */
+/* Project Slider Navigation – placed below the slider */
 .project-nav {
   text-align: center;
+  margin-top: 5px;
 }
 .project-nav button {
   display: inline-block;
@@ -323,7 +350,6 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -361,9 +387,10 @@ section {
   list-style-type: disc;
 }
 
-/* Work Slider Navigation - Below Slides */
+/* Work Slider Navigation – placed below the slider */
 .work-nav {
   text-align: center;
+  margin-top: 5px;
 }
 .work-nav button {
   display: inline-block;
@@ -412,9 +439,10 @@ section {
   overflow-y: auto;
 }
 
-/* Volunteering Slider Navigation - Below Slides */
+/* Volunteering Slider Navigation – placed below the slider */
 .vol-nav {
   text-align: center;
+  margin-top: 5px;
 }
 .vol-nav button {
   display: inline-block;
@@ -546,7 +574,7 @@ section {
   border-radius: 10px;
 }
 
-/* Gallery Slider Navigation - Below Slides */
+/* Gallery Slider Navigation – placed below the slider */
 .gallery-nav {
   text-align: center;
   margin-top: 10px;
@@ -704,8 +732,23 @@ footer {
 }
 
 @media (max-width: 600px) {
-  .work-text,
-  .vol-text {
-    padding-bottom: 40px;
+  /* Reduce overall height on small screens */
+  .bio-slider {
+    height: 450px;
+  }
+  /* Increase image area to reduce white space below the image */
+  .card-image {
+    height: 60%;
+  }
+  /* Reduce text area, padding, and font size */
+  .card-text {
+    height: 40%;
+    padding: 2px;
+    font-size: 14px;
   }
 }
+
+
+
+
+

@@ -467,7 +467,10 @@ section {
   margin: 0 auto 40px;
   padding: 0 50px; /* Keeps slide content away from navigation buttons */
   height: 500px;   /* Fixed height for consistent slide positioning */
+  /* Optionally add overflow: visible if needed */
+  overflow: visible;
 }
+
 
 /* Volunteering Slider */
 .vol-slider {
@@ -523,12 +526,14 @@ section {
 }
 
 .vol-prev {
-  left: -40px;
+  left: 10px;
 }
 
 .vol-next {
-  right: -40px;
+  right: 10px;
 }
+
+
 
 /* (Other general styles like .round-logo, etc., are already defined in your CSS) */
 

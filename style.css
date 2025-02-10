@@ -26,25 +26,24 @@ body {
 .project-text, 
 .work-text, 
 .vol-text, 
-.edu-text, 
-.gallery-caption {
+.edu-text {
   font-family: 'Arial', sans-serif;  /* Readable body font for slide content */
 }
 
 
 h1 {
   font-family: 'Pacifico', cursive;
-  font-size: 2.5rem;  /* Large size for main titles */
+  font-size: 2rem;  /* Large size for main titles */
 }
 
 h2 {
   font-family: 'Pacifico', cursive;
-  font-size: 2rem;  /* Slightly smaller for section headings */
+  font-size: 1.8rem;  /* Slightly smaller for section headings */
 }
 
 h3 {
   font-family: 'Pacifico', cursive;
-  font-size: 1.5rem;  /* Smallest heading */
+  font-size: 1.2rem;  /* Smallest heading */
 }
 
 
@@ -635,10 +634,12 @@ section {
 
 .gallery-caption {
   text-align: center;
-  font-size: 20px;
-  font-weight: bold;
+  
+
   margin-top: 15px;
   color: #000;
+  font-family: 'Pacifico', cursive;
+  font-size: 1.2rem;
 }
 
 /* ============================== */

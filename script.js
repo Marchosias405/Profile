@@ -1,19 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-  /* ----------------------------------
+  /* ====================================================
      Mobile Navigation Toggle
-  ---------------------------------- */
+  ==================================================== */
   const mobileMenu = document.getElementById("mobile-menu");
   const navMenu = document.getElementById("nav-menu");
   if (mobileMenu && navMenu) {
     mobileMenu.addEventListener("click", function () {
       navMenu.classList.toggle("active");
     });
-    
-    // Add click listeners on each nav link to close the menu when clicked (mobile view)
+    // Close the mobile menu when a nav link is clicked
     const navLinks = document.querySelectorAll("#nav-menu li a");
     navLinks.forEach(link => {
       link.addEventListener("click", function () {
-        // Only collapse the nav menu if in mobile view (optional check)
         if (window.innerWidth <= 768) {
           navMenu.classList.remove("active");
         }
@@ -21,9 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  /* ----------------------------------
-         BIO SLIDER (Section 1)
-  ---------------------------------- */
+  /* ====================================================
+     BIO SLIDER (Section 1)
+  ==================================================== */
   const bioSlides = document.querySelectorAll(".bio-slide");
   const bioDotsContainer = document.getElementById("bio-dots");
   let currentBioSlide = 0;
@@ -47,11 +45,10 @@ document.addEventListener("DOMContentLoaded", function () {
     bioDots[index].classList.add("active");
     currentBioSlide = index;
   }
-  // Auto sliding disabled for Bio slider
 
-  /* ----------------------------------
-         PROJECTS SLIDER (Section 2)
-  ---------------------------------- */
+  /* ====================================================
+     PROJECTS SLIDER (Section 2)
+  ==================================================== */
   const projectSlides = document.querySelectorAll(".project-slide");
   let currentProjectSlide = 0;
   const projectPrevButton = document.querySelector(".project-prev");
@@ -78,9 +75,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  /* ----------------------------------
-         WORK SLIDER (Section 3)
-  ---------------------------------- */
+  /* ====================================================
+     WORK SLIDER (Section 3)
+  ==================================================== */
   const workSlides = document.querySelectorAll(".work-slide");
   let currentWorkSlide = 0;
   const workPrevButton = document.querySelector(".work-prev");
@@ -107,9 +104,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  /* ----------------------------------
-         VOLUNTEERING SLIDER (Section 4)
-  ---------------------------------- */
+  /* ====================================================
+     VOLUNTEERING SLIDER (Section 4)
+  ==================================================== */
   const volSlides = document.querySelectorAll(".vol-slide");
   let currentVolSlide = 0;
   const volPrevButton = document.querySelector(".vol-prev");
@@ -136,9 +133,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  /* ----------------------------------
-         EDUCATION SLIDER (Section 5)
-  ---------------------------------- */
+  /* ====================================================
+     EDUCATION SLIDER (Section 5)
+  ==================================================== */
   const eduSlides = document.querySelectorAll(".edu-slide");
   let currentEduSlide = 0;
 
@@ -147,22 +144,22 @@ document.addEventListener("DOMContentLoaded", function () {
     eduSlides[index].classList.add("active");
   }
 
+  // Auto-rotate education slides every 5 seconds
   setInterval(() => {
     currentEduSlide = (currentEduSlide + 1) % eduSlides.length;
     showEduSlide(currentEduSlide);
   }, 5000);
 
-  /* ----------------------------------
-         GALLERY SLIDER (Section 6)
-         Three images visible: left, center, right.
-  ---------------------------------- */
+  /* ====================================================
+     GALLERY SLIDER (Section 6)
+  ==================================================== */
   const gallerySlides = document.querySelectorAll(".gallery-slide");
   const galleryPrevButton = document.querySelector(".gallery-prev");
   const galleryNextButton = document.querySelector(".gallery-next");
   let currentGalleryIndex = 0;
 
   function updateGallery() {
-    // Hide all slides first
+    // Hide all slides and remove positioning classes
     gallerySlides.forEach(slide => {
       slide.classList.remove("left", "active", "right");
       slide.style.display = "none";
@@ -179,19 +176,25 @@ document.addEventListener("DOMContentLoaded", function () {
     gallerySlides[rightIndex].style.display = "block";
   }
 
-  if(galleryPrevButton) {
-    galleryPrevButton.addEventListener("click", function(){
+  if (galleryPrevButton) {
+    galleryPrevButton.addEventListener("click", function () {
       currentGalleryIndex = (currentGalleryIndex - 1 + gallerySlides.length) % gallerySlides.length;
       updateGallery();
     });
   }
 
-  if(galleryNextButton) {
-    galleryNextButton.addEventListener("click", function(){
+  if (galleryNextButton) {
+    galleryNextButton.addEventListener("click", function () {
       currentGalleryIndex = (currentGalleryIndex + 1) % gallerySlides.length;
       updateGallery();
     });
   }
 
   updateGallery();
+
+  /* ====================================================
+     BACKGROUND VIDEO
+     (The video element with id="bg-video" plays on loop based on its HTML attributes.)
+  ==================================================== */
+  // No JavaScript is required for the background video since it's set to autoplay, muted, loop, and playsinline in HTML.
 });

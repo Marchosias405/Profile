@@ -12,7 +12,6 @@ body {
   color: #333;
 }
 
-
 /* ============================== */
 /*         NAVIGATION BAR         */
 /* ============================== */
@@ -37,7 +36,6 @@ header {
   align-items: center;
 }
 
-/* Hamburger Menu (desktop hidden) */
 .menu-toggle {
   position: absolute;
   left: 20px;
@@ -55,7 +53,6 @@ header {
   margin: 4px 0;
 }
 
-/* Navigation List (ul) */
 .nav {
   list-style: none;
   display: flex;
@@ -63,12 +60,10 @@ header {
   margin: 0 auto;
 }
 
-/* Navigation Items */
 .nav li {
   margin: 0;
 }
 
-/* Navigation Links */
 .nav li a {
   color: #fff;
   text-decoration: none;
@@ -82,15 +77,13 @@ header {
   color: #ddd;
 }
 
-
 /* ======================== */
 /*        SECTIONS          */
 /* ======================== */
-
-section h2, 
+section h2,
 section h3 {
   text-align: center;
-  font-size: 24px; /* Adjust size as needed */
+  font-size: 24px;
   margin-bottom: 20px;
 }
 
@@ -102,17 +95,16 @@ section {
 /* Bio Intro */
 .bio-intro {
   display: flex;
-  align-items: center; /* Aligns items vertically */
-  justify-content: center; /* Centers content horizontally */
-  gap: 20px; /* Adjusts spacing between items */
-  flex-wrap: wrap; /* Ensures responsiveness */
+  align-items: center; /* Align items vertically */
+  justify-content: center; /* Center content horizontally */
+  gap: 20px; /* Adjust spacing between items */
+  flex-wrap: wrap; /* Ensure responsiveness */
 }
 
 .hand-wave {
   width: 80px; /* Adjust size as needed */
   height: auto;
 }
-
 
 /* ============================== */
 /*     BIO SLIDER (Card Layout)   */
@@ -139,14 +131,13 @@ section {
   display: flex; /* Only the active slide is shown */
 }
 
-/* Image container inside Bio slide */
-.bio-slide .card-image {
+.card-image {
   flex: 1;
   overflow: hidden;
   max-height: 500px;
 }
 
-.bio-slide .card-image img {
+.card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;       /* Fill the container (may crop a bit) */
@@ -154,8 +145,7 @@ section {
   display: block;
 }
 
-/* Text container inside Bio slide */
-.bio-slide .card-text {
+.card-text {
   padding: 10px;
   font-size: 16px;
   overflow: auto;
@@ -194,11 +184,12 @@ section {
   width: 90%;
   max-width: 800px;
   margin: 0 auto 40px;
-  padding: 0 50px; /* Side padding so slide content doesn't reach the buttons */
+  /* Removed side padding as nav is now below */
 }
 
 .project-slider {
   overflow: hidden;
+  margin-bottom: 20px; /* Space for navigation buttons */
 }
 
 .project-slide {
@@ -217,9 +208,8 @@ section {
   display: flex;
 }
 
-/* Increase Image Size */
 .project-image {
-  flex: 1 1 60%; /* Give 60% height to the image */
+  flex: 1 1 60%;
   overflow: hidden;
   max-height: 300px;
 }
@@ -234,43 +224,38 @@ section {
 
 .project-text {
   flex: 1 1 40%;
-  padding: 20px; /* Ensures space between text and border */
+  padding: 20px;
   font-size: 16px;
-  line-height: 1.5; /* Adds more space between lines */
+  line-height: 1.5;
   background: #f9f9f9;
   text-align: left;
 }
 
-/* Center the hyperlinks inside project slides */
 .project-text a {
-  display: block; /* Makes the link a block-level element */
-  text-align: center; /* Centers the link text */
-  margin-top: 10px; /* Adds spacing above the link */
+  display: block;
+  text-align: center;
+  margin-top: 10px;
 }
 
-/* Fix bullet points inside slides */
 .project-text ul,
-.bio-slide .card-text ul,
-.hobbies-slide .hobbies-text ul {
+.card-text ul {
   list-style-type: disc;
   list-style-position: inside;
   padding-left: 0;
   margin-left: 0;
 }
 
-/* Fix bullet point spacing */
 .project-text ul li,
-.bio-slide .card-text ul li,
-.hobbies-slide .hobbies-text ul li {
+.card-text ul li {
   margin-bottom: 5px;
 }
 
 .tech-logos {
   display: flex;
-  justify-content: center; /* Center the logos horizontally */
+  justify-content: center;
   align-items: center;
-  gap: 10px; /* Adds spacing between icons */
-  margin-top: 10px; /* Adds space above the logos */
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .tech-logos img {
@@ -293,43 +278,37 @@ section {
   background: #555;
 }
 
-/* -------------------------- */
-/*  PROJECT SLIDER BUTTONS    */
-/* -------------------------- */
-.project-prev,
-.project-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+/* Project Slider Navigation - Below Slides */
+.project-nav {
+  text-align: center;
+}
+.project-nav button {
+  display: inline-block;
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
   border: none;
-  padding: 10px;
+  padding: 10px 15px;
   cursor: pointer;
-  border-radius: 50%;
-  z-index: 10;
+  border-radius: 5px;
+  margin: 0 10px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
 }
-
-.project-prev {
-  left: 10px;
-}
-
-.project-next {
-  right: 10px;
+.project-nav button:hover {
+  background: #555;
 }
 
 /* ============================== */
 /*  WORK & VOLUNTEERING SLIDERS   */
 /* ============================== */
-/* Fixed container with absolute-positioned slides */
 .work-slider-container,
 .vol-slider-container {
   position: relative;
   width: 90%;
   max-width: 800px;
   margin: 0 auto 40px;
-  padding: 0 50px; /* Keep slide content away from navigation buttons */
-  height: 500px;   /* Fixed height for consistent slide positioning */
+  /* Removed side padding as nav is now below */
+  height: 500px;
 }
 
 .work-slider,
@@ -347,10 +326,9 @@ section {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  /* Remove bottom padding since we'll control the text container separately */
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   display: none;
 }
 
@@ -359,42 +337,21 @@ section {
   display: block;
 }
 
-/* Ensure each work slide has relative positioning */
-.work-slide {
-  position: relative;
-}
-
-/* ------------------ */
-/*   Work Text Area   */
-/* ------------------ */
-.work-text {
-  position: absolute;
-  top: 140px;  /* Set this so the text starts below the logo (adjust as needed) */
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 20px;
-  background: rgba(249, 249, 249, 0.9); /* Optional semi-transparent background for readability */
-  overflow-y: auto;
-}
-
-/* Round logo for work slides */
+/* Work Text Area */
 .round-logo {
   display: block;
-  margin: 20px auto 10px;  /* Increased top margin to add extra space */
+  margin: 20px auto 10px;
   width: 100px;
   height: 100px;
   border-radius: 50%;
 }
 
-/* Headings inside work slide */
 .work-slide h3 {
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: center;
 }
 
-/* Paragraphs and lists in work-text */
 .work-text p,
 .work-text ul {
   margin: 10px 0;
@@ -406,39 +363,29 @@ section {
   list-style-type: disc;
 }
 
-/* ------------------------------ */
-/*  Navigation Buttons for Work   */
-/* ------------------------------ */
-.work-prev,
-.work-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+/* Work Slider Navigation - Below Slides */
+.work-nav {
+  text-align: center;
+}
+.work-nav button {
+  display: inline-block;
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
   border: none;
-  padding: 10px;
+  padding: 10px 15px;
   cursor: pointer;
-  border-radius: 50%;
-  z-index: 10;
+  border-radius: 5px;
+  margin: 0 10px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
 }
-
-/* Position buttons outside the fixed container */
-.work-prev {
-  left: -10px;
+.work-nav button:hover {
+  background: #555;
 }
-
-.work-next {
-  right: -10px;
-}
-
-
-
-
 
 .experience-button {
-  display: block;           /* Make the button a block-level element */
-  margin: 10px auto;        /* Center it horizontally */
+  display: block;
+  margin: 10px auto;
   padding: 8px 16px;
   background-color: #333;
   color: #fff;
@@ -446,99 +393,46 @@ section {
   border-radius: 4px;
   font-size: 14px;
   transition: background-color 0.3s ease;
-  text-align: center;       /* Center the text inside the button */
+  text-align: center;
 }
-
 .experience-button:hover {
   background-color: #555;
 }
 
-
-
-
-
-/* ------------------ */
-/*   Volenteer Text Area   */
-/* ------------------ */
-
-/* Volunteering Slider Container (same as work-slider-container) */
-.vol-slider-container {
-  position: relative;
-  width: 90%;
-  max-width: 800px;
-  margin: 0 auto 40px;
-  padding: 0 50px; /* Keeps slide content away from navigation buttons */
-  height: 500px;   /* Fixed height for consistent slide positioning */
-  /* Optionally add overflow: visible if needed */
-  overflow: visible;
+.text-content {
+  margin-bottom: 40px;
 }
 
-
-/* Volunteering Slider */
-.vol-slider {
-  position: relative;
-  height: 100%;
-  overflow: hidden;
-}
-
-/* Volunteering Slide */
-.vol-slide {
+.work-text, .vol-text {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  /* No bottom padding here since we'll use a dedicated text container */
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  display: none;
-}
-
-.vol-slide.active {
-  display: block;
-}
-
-/* Volunteering Text Container (new) */
-.vol-text {
-  position: absolute;
-  top: 140px; /* Adjust so the text starts below the round logo */
+  top: 140px;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 40px;
   padding: 20px;
-  background: rgba(249,249,249,0.9); /* Optional: semi-transparent background */
+  background: rgba(249, 249, 249, 0.9);
   overflow-y: auto;
 }
 
-/* Navigation Buttons for Volunteering Slider */
-.vol-prev,
-.vol-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
+/* Volunteering Slider Navigation - Below Slides */
+.vol-nav {
+  text-align: center;
+}
+.vol-nav button {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.5);
   color: #fff;
   border: none;
-  padding: 10px;
+  padding: 10px 15px;
   cursor: pointer;
-  border-radius: 50%;
-  z-index: 10;
+  border-radius: 5px;
+  margin: 0 10px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
 }
-
-.vol-prev {
-  left: 10px;
+.vol-nav button:hover {
+  background: #555;
 }
-
-.vol-next {
-  right: 10px;
-}
-
-
-
-/* (Other general styles like .round-logo, etc., are already defined in your CSS) */
-
 
 /* ============================== */
 /*       EDUCATION SLIDER         */
@@ -548,9 +442,9 @@ section {
   width: 90%;
   max-width: 800px;
   margin: 0 auto 40px;
-  aspect-ratio: 1200 / 850; /* Maintains the 1200:850 ratio */
+  aspect-ratio: 1200 / 850;
   overflow: hidden;
-  border-radius: 15px; /* Rounds off the container corners */
+  border-radius: 15px;
 }
 
 .edu-slide {
@@ -569,26 +463,23 @@ section {
 .edu-slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* Ensures the image fills the container clearly */
+  object-fit: cover;
   object-position: center;
   display: block;
-  border-radius: 15px;     /* Matches the container’s rounded corners */
+  border-radius: 15px;
 }
 
 .edu-text {
   position: absolute;
   bottom: 20px;
   left: 20px;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+  background: rgba(0, 0, 0, 0.5);
   color: #fff;
   padding: 10px;
   border-radius: 5px;
   font-size: 16px;
   line-height: 1.4;
 }
-
-
-
 
 /* ============================== */
 /*       GALLERY SLIDER           */
@@ -598,10 +489,10 @@ section {
   width: 90%;
   max-width: 800px;
   margin: 0 auto 40px;
-  height: 300px; /* Adjust height as needed */
+  height: 300px;
   overflow: hidden;
   border-radius: 10px;
-  background: transparent;  /* Transparent so the background video shows through */
+  background: transparent;
 }
 
 .gallery-slider {
@@ -609,7 +500,6 @@ section {
   height: 100%;
 }
 
-/* Each slide is 30% width */
 .gallery-slide {
   position: absolute;
   width: 30%;
@@ -621,11 +511,9 @@ section {
 /* LEFT SLIDE */
 .gallery-slide.left {
   left: 0;
-  top: 20px; /* Adjust vertical offset as needed */
+  top: 20px;
   display: block;
-  /* Overall lower opacity for side images */
   opacity: 0.7;
-  /* Apply a mask: left 45% is faded out (transparent), then transitions to fully visible */
   -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 45%, black 55%, black 100%);
   mask-image: linear-gradient(to right, transparent 0%, transparent 45%, black 55%, black 100%);
 }
@@ -636,7 +524,7 @@ section {
   top: 0;
   z-index: 2;
   display: block;
-  opacity: 1;  /* Fully opaque */
+  opacity: 1;
   -webkit-mask-image: none;
   mask-image: none;
 }
@@ -644,10 +532,9 @@ section {
 /* RIGHT SLIDE */
 .gallery-slide.right {
   left: 70%;
-  top: 20px; /* Adjust vertical offset as needed */
+  top: 20px;
   display: block;
-  opacity: 0.7;  /* Lower overall opacity for side image */
-  /* Apply a mask: right 45% is faded out (transparent), then transitions to fully visible */
+  opacity: 0.7;
   -webkit-mask-image: linear-gradient(to left, transparent 0%, transparent 45%, black 55%, black 100%);
   mask-image: linear-gradient(to left, transparent 0%, transparent 45%, black 55%, black 100%);
 }
@@ -661,7 +548,6 @@ section {
   border-radius: 10px;
 }
 
-/* Gallery Slider Navigation Buttons */
 .gallery-prev,
 .gallery-next {
   position: absolute;
@@ -684,21 +570,13 @@ section {
   right: 10px;
 }
 
-/* Gallery Caption: text set to black */
 .gallery-caption {
   text-align: center;
-  font-size: 20px; /* Adjust as needed */
+  font-size: 20px;
   font-weight: bold;
   margin-top: 15px;
   color: #000;
 }
-
-
-
-
-
-
-
 
 /* ============================== */
 /*        RESUME SECTION          */
@@ -732,21 +610,15 @@ section {
   background: #555;
 }
 
-
-
-
 #bg-video {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;  /* Ensures the video covers the viewport without distortion */
-  z-index: -1;        /* Places the video behind all other elements */
+  object-fit: cover;
+  z-index: -1;
 }
-
-
-
 
 /* ============================== */
 /*            FOOTER              */
@@ -762,9 +634,9 @@ footer {
 
 .social-media {
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap if they don’t fit */
-  justify-content: center; /* Center items on all screen sizes */
-  gap: 20px; /* Adds spacing between items */
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   padding: 10px;
 }
 
@@ -774,7 +646,7 @@ footer {
   font-size: 18px;
   display: flex;
   align-items: center;
-  gap: 8px; /* Space between icon and text */
+  gap: 8px;
   transition: color 0.3s ease;
 }
 
@@ -782,39 +654,34 @@ footer {
   color: #ddd;
 }
 
-/* Increase icon size */
 .social-media i {
   font-size: 22px;
 }
-
 
 /* ============================== */
 /*      RESPONSIVE STYLES         */
 /* ============================== */
 @media (max-width: 768px) {
   header {
-    height: 60px;            /* Maintain fixed header height */
+    height: 60px;
   }
   
-  /* Show the hamburger on mobile */
   .menu-toggle {
     display: flex;
   }
   
-  /* Hide the nav list by default on mobile */
   .nav {
     display: none;
     flex-direction: column;
     width: 100%;
     background: #333;
     position: absolute;
-    top: 60px;               /* Dropdown appears directly below header */
+    top: 60px;
     left: 0;
     z-index: 999;
     border-radius: 8px;
   }
   
-  /* Show nav list when active */
   .nav.active {
     display: flex;
   }
@@ -824,17 +691,26 @@ footer {
     text-align: center;
   }
   
-  /* Adjust navbar container to space out the hamburger and the centered content */
   .navbar {
     justify-content: space-between;
     padding: 0 20px;
   }
-
+  
   .social-media {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center them */
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .work-text, .vol-text {
+    top: 120px;
+    bottom: 20px;
+    padding: 25px;
   }
 }
 
-
-
+@media (max-width: 600px) {
+  .work-text,
+  .vol-text {
+    padding-bottom: 40px;
+  }
+}

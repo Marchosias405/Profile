@@ -112,7 +112,10 @@ header {
 .nav li a:hover {
   text-decoration: underline;
   color: #ddd;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
 }
+
 
 /* ===================================================================
    SECTION TITLES & LAYOUT
@@ -817,6 +820,7 @@ footer {
   .vol-text {
     padding-bottom: 40px;
     overflow-y: auto;
+
   }
 
 
@@ -834,6 +838,13 @@ footer {
     padding: 2px;
     font-size: 14px;
   }
+
+
+  section h1 {
+    font-size: 2.7rem;
+  }
+
+
 
 
 }

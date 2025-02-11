@@ -32,6 +32,20 @@ h1, h2, h3 {
 }
 
 
+
+
+/* Subtle upward lift with a uniform drop shadow on hover */
+.bio-slide:hover,
+.project-slide:hover,
+.work-slide:hover,
+.vol-slide:hover,
+.edu-slide:hover,
+.gallery-slide:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 /* ===================================================================
    HEADER & NAVIGATION
 =================================================================== */

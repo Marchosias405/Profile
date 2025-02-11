@@ -481,8 +481,11 @@ section {
   bottom: 40px;
   padding: 20px;
   background: rgba(249, 249, 249, 0.9);
-  overflow-y: auto;
+
+  overflow-y: hidden; 
 }
+
+
 
 /* Volunteering Navigation Buttons */
 .vol-nav {
@@ -805,6 +808,7 @@ footer {
     top: 120px;
     bottom: 20px;
     padding: 25px;
+    overflow-y: auto;
   }
 }
 
@@ -812,6 +816,7 @@ footer {
   .work-text,
   .vol-text {
     padding-bottom: 40px;
+    overflow-y: auto;
   }
 
 

@@ -775,4 +775,22 @@ footer {
   .vol-text {
     padding-bottom: 40px;
   }
+
+
+
+  .bio-slider {
+    height: 450px;
+  }
+  /* Increase image area */
+  .card-image {
+    height: 75%;
+  }
+  /* Reduce text area and padding */
+  .card-text {
+    height: 25%;
+    padding: 2px;
+    font-size: 14px;
+  }
+
+
 }

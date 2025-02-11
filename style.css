@@ -13,28 +13,23 @@ body {
   line-height: 1.6;
   background: #f4f4f4;
   color: #333;
-  
 }
 
-
-
-/* Override for slide content to use a more readable font */
+/* Use Arial for all slide content */
 .card-text,
 .project-text,
 .work-text,
 .vol-text,
 .edu-text {
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
 }
 
+/* Header Titles */
 h1, h2, h3 {
   font-family: "Brush Script MT", "Lucida Handwriting", "Apple Chancery", cursive;
 }
 
-
-
-
-/* Subtle upward lift with a uniform drop shadow on hover */
+/* Hover Effect for All Slides */
 .bio-slide:hover,
 .project-slide:hover,
 .work-slide:hover,
@@ -89,7 +84,7 @@ header {
   margin: 4px 0;
 }
 
-/* Navigation Menu Styles */
+/* Navigation Menu */
 .nav {
   list-style: none;
   display: flex;
@@ -116,16 +111,13 @@ header {
   border-radius: 4px;
 }
 
-
 /* ===================================================================
    SECTION TITLES & LAYOUT
 =================================================================== */
 section h2,
 section h3 {
   text-align: center;
-  font-size: 24px;
   margin-bottom: 20px;
-
 }
 
 section h2 {
@@ -145,7 +137,7 @@ section {
 /* ===================================================================
    BIO SECTION
 =================================================================== */
-/* Intro section for Bio */
+/* Bio Intro */
 .bio-intro {
   display: flex;
   align-items: center;
@@ -153,7 +145,6 @@ section {
   gap: 20px;
   flex-wrap: wrap;
   font-size: 2rem;
-
 }
 
 .hand-wave {
@@ -161,17 +152,17 @@ section {
   height: auto;
 }
 
-/* Bio Slider Container with fixed height */
+/* Bio Slider */
 .bio-slider {
   width: 90%;
   max-width: 800px;
   margin: 0 auto 5px;
-  height: 700px;  /* Fixed height for smooth transitions */
+  height: 700px;
   position: relative;
   overflow: hidden;
 }
 
-/* Each Bio Slide is positioned absolutely and uses flexbox */
+/* Individual Bio Slide */
 .bio-slide {
   display: flex;
   flex-direction: column;
@@ -191,7 +182,7 @@ section {
   display: flex;
 }
 
-/* Card Image takes up 75% of the slide */
+/* Card Image (75% height) */
 .card-image {
   width: 100%;
   height: 75%;
@@ -206,7 +197,7 @@ section {
   display: block;
 }
 
-/* Card Text takes up 25% with minimal padding */
+/* Card Text (25% height) */
 .card-text {
   height: 25%;
   padding: 5px;
@@ -216,13 +207,12 @@ section {
   background: #f9f9f9;
 }
 
-
-
-/* Bio Navigation Buttons (Prev/Next) */
+/* Bio Navigation Buttons */
 .bio-nav {
   text-align: center;
   margin-top: 5px;
 }
+
 .bio-nav button {
   display: inline-block;
   background: rgba(0, 0, 0, 0.5);
@@ -235,6 +225,7 @@ section {
   font-size: 18px;
   transition: background-color 0.3s ease;
 }
+
 .bio-nav button:hover {
   background: #555;
 }
@@ -252,7 +243,7 @@ section {
 .project-slider {
   overflow: hidden;
   margin-bottom: 10px;
-  height: 600px;  /* Fixed height */
+  height: 600px;
   position: relative;
 }
 
@@ -288,7 +279,7 @@ section {
   display: block;
 }
 
-/* Project text is a flex container to push content down if needed */
+/* Project Text */
 .project-text {
   display: flex;
   flex-direction: column;
@@ -300,7 +291,7 @@ section {
 }
 
 .project-text a.project-link {
-  margin-top: auto; /* Pushes link and logos to the bottom */
+  margin-top: auto;
 }
 
 .project-text a {
@@ -354,6 +345,7 @@ section {
   text-align: center;
   margin-top: 5px;
 }
+
 .project-nav button {
   display: inline-block;
   background: rgba(0, 0, 0, 0.5);
@@ -366,6 +358,7 @@ section {
   font-size: 18px;
   transition: background-color 0.3s ease;
 }
+
 .project-nav button:hover {
   background: #555;
 }
@@ -398,7 +391,7 @@ section {
   height: 100%;
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: none;
 }
 
@@ -407,7 +400,7 @@ section {
   display: block;
 }
 
-/* Work section text and logos */
+/* Work Section */
 .round-logo {
   display: block;
   margin: 20px auto 10px;
@@ -438,6 +431,7 @@ section {
   text-align: center;
   margin-top: 5px;
 }
+
 .work-nav button {
   display: inline-block;
   background: rgba(0, 0, 0, 0.5);
@@ -450,11 +444,12 @@ section {
   font-size: 18px;
   transition: background-color 0.3s ease;
 }
+
 .work-nav button:hover {
   background: #555;
 }
 
-/* Experience Button (for slide links) */
+/* Experience Button */
 .experience-button {
   display: block;
   margin: 10px auto;
@@ -467,6 +462,7 @@ section {
   transition: background-color 0.3s ease;
   text-align: center;
 }
+
 .experience-button:hover {
   background-color: #555;
 }
@@ -475,8 +471,8 @@ section {
   margin-bottom: 40px;
 }
 
-/* Work & Volunteering text area */
-.work-text, .vol-text {
+.work-text,
+.vol-text {
   position: absolute;
   top: 140px;
   left: 0;
@@ -484,17 +480,15 @@ section {
   bottom: 40px;
   padding: 20px;
   background: rgba(249, 249, 249, 0.9);
-
-  overflow-y: hidden; 
+  overflow-y: hidden;
 }
-
-
 
 /* Volunteering Navigation Buttons */
 .vol-nav {
   text-align: center;
   margin-top: 5px;
 }
+
 .vol-nav button {
   display: inline-block;
   background: rgba(0, 0, 0, 0.5);
@@ -507,6 +501,7 @@ section {
   font-size: 18px;
   transition: background-color 0.3s ease;
 }
+
 .vol-nav button:hover {
   background: #555;
 }
@@ -567,8 +562,7 @@ section {
   max-width: 800px;
   margin: 0 auto 40px;
   height: 300px;
-  overflow: hidden;
-  
+  /* We want the gallery slider to remain visible, so no clipping here */
   background: transparent;
   border-radius: 0;
   overflow: visible;
@@ -595,8 +589,6 @@ section {
   opacity: 0.7;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 45%, black 55%, black 100%);
   mask-image: linear-gradient(to right, transparent 0%, transparent 45%, black 55%, black 100%);
-  
-  
 }
 
 /* Center Gallery Slide (Active) */
@@ -628,30 +620,27 @@ section {
   display: block;
   border-radius: 10px;
   margin-bottom: -5px;
-  
 }
 
 .gallery-slide.left img,
 .gallery-slide.right img {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  margin-bottom: -5px;  /* This may help expose the rounding if it's still being cut off */
+  margin-bottom: -5px;
 }
 
-
+/* Adjust left/right gallery slide positions */
 .gallery-slide.left,
 .gallery-slide.right {
   overflow: visible;
-  /* Adjust the top offset so the bottom of the slide extends further down */
-  top: 10px;  /* Reduced from 20px so the bottom area is less aligned with the active slide */
+  top: 10px;
 }
 
-
-/* Gallery Navigation Buttons */
 .gallery-nav {
   text-align: center;
   margin-top: 10px;
 }
+
 .gallery-nav button {
   display: inline-block;
   background: rgba(0, 0, 0, 0.5);
@@ -664,6 +653,7 @@ section {
   font-size: 18px;
   transition: background-color 0.3s ease;
 }
+
 .gallery-nav button:hover {
   background: #555;
 }
@@ -705,6 +695,7 @@ section {
   border-radius: 5px;
   transition: background 0.3s ease;
 }
+
 .resume-link:hover {
   background: #555;
 }
@@ -751,6 +742,7 @@ footer {
   gap: 8px;
   transition: color 0.3s ease;
 }
+
 .social-media a:hover {
   color: #ddd;
 }
@@ -759,17 +751,14 @@ footer {
   font-size: 22px;
 }
 
-
-
-
-
-
-
+/* ===================================================================
+   ROTATING BEARING (Languages & Frameworks Section)
+=================================================================== */
 .rotating-bearing {
   position: relative;
   width: 300px;
   height: 300px;
-  margin: -50px auto 0; 
+  margin: -50px auto 0;
   transform: translateX(-30px);
   animation: spin 8s linear infinite;
   overflow: visible;
@@ -778,49 +767,37 @@ footer {
 .bearing-logo-wrapper {
   position: absolute;
 }
+
 .bearing-logo {
   width: 60px;
   height: 60px;
   object-fit: contain;
 }
 
-
-
-.section-box:hover {
-  transform: translateY(-3px);            /* Slight upward movement */
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);   /* Uniform drop shadow around the box */
-}
-
-
-
+/* ===================================================================
+   SECTION BOX (for Languages & Frameworks Section)
+=================================================================== */
 .section-box {
-  background-color: #fff;      /* White background */
-  border: 1px solid #ddd;      /* Light gray border */
-  border-radius: 8px;          /* Rounded corners */
-  padding: 60px;               /* Top/side padding */
-  padding-bottom: 60px;        /* Increased bottom padding for the wheel */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 60px;
+  padding-bottom: 60px;
   margin: 20px auto;
   max-width: 800px;
-  overflow: visible;           /* Allow any overflow (the rotating wheel) to be visible */
+  overflow: visible;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-
-
-
-
-
-
+.section-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
 
 /* ===================================================================
    RESPONSIVE STYLES
 =================================================================== */
 @media (max-width: 768px) {
-
-  .card-image img {
-    object-fit: contain;
-  }
-
   header {
     height: 60px;
   }
@@ -873,44 +850,41 @@ footer {
   .vol-text {
     padding-bottom: 40px;
     overflow-y: auto;
-
   }
-
-
-
+  
   .bio-slider {
     height: 450px;
   }
-  /* Increase image area */
+  
   .card-image {
     height: 75%;
   }
-  /* Reduce text area and padding */
+  
   .card-text {
     height: 25%;
     padding: 2px;
     font-size: 14px;
   }
-
-
+  
   section h1 {
     font-size: 2.7rem;
   }
-
-
-
-
-    /* Ensure the left slide starts at the very left edge */
-    .gallery-slide.left {
-      left: 0;
-    }
-    /* Shift the active slide slightly to the left */
-    .gallery-slide.active {
-      left: 34%;
-    }
-    /* Adjust the right slide so that it aligns properly */
-    .gallery-slide.right {
-      left: 68%;
-    }
-
+  
+  /* Adjust Gallery Slide Positions on Small Screens */
+  .gallery-slide.left {
+    left: 0;
+  }
+  
+  .gallery-slide.active {
+    left: 34%;
+  }
+  
+  .gallery-slide.right {
+    left: 68%;
+  }
+  
+  /* Adjust Rotating Bearing Position on Small Screens */
+  .rotating-bearing {
+    transform: translateX(-10%);
+  }
 }

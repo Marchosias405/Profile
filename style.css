@@ -675,7 +675,7 @@ section {
   margin-top: 15px;
   color: #000;
   font-family: "Brush Script MT", "Lucida Handwriting", "Apple Chancery", cursive;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 /* ===================================================================
@@ -846,5 +846,18 @@ footer {
 
 
 
+
+    /* Ensure the left slide starts at the very left edge */
+    .gallery-slide.left {
+      left: 0;
+    }
+    /* Shift the active slide slightly to the left */
+    .gallery-slide.active {
+      left: 34%;
+    }
+    /* Adjust the right slide so that it aligns properly */
+    .gallery-slide.right {
+      left: 68%;
+    }
 
 }

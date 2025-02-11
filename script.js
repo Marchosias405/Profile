@@ -1,4 +1,4 @@
-// Wait for the DOM to fully load before executing any scripts
+// Wait for the DOM to fully load before executing scripts
 document.addEventListener("DOMContentLoaded", function () {
   /* ====================================================
      Mobile Navigation Toggle
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     mobileMenu.addEventListener("click", function () {
       navMenu.classList.toggle("active");
     });
-    // Close the mobile menu when a nav link is clicked on mobile
+    // Close the mobile menu when a nav link is clicked (on mobile)
     const navLinks = document.querySelectorAll("#nav-menu li a");
     navLinks.forEach(link => {
       link.addEventListener("click", function () {
@@ -46,15 +46,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to show a specific bio slide based on index
   function showBioSlide(index) {
-    bioSlides.forEach((slide) => slide.classList.remove("active"));
+    bioSlides.forEach(slide => slide.classList.remove("active"));
     const bioDots = document.querySelectorAll("#bio-dots .dot");
-    bioDots.forEach((dot) => dot.classList.remove("active"));
+    bioDots.forEach(dot => dot.classList.remove("active"));
     bioSlides[index].classList.add("active");
     bioDots[index].classList.add("active");
     currentBioSlideIndex = index;
   }
 
-  // Add event listener for previous button
+  // Prev/Next functionality for Bio slider
   if (bioPrevButton) {
     bioPrevButton.addEventListener("click", function () {
       let newIndex = currentBioSlideIndex - 1;
@@ -64,8 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
       showBioSlide(newIndex);
     });
   }
-
-  // Add event listener for next button
   if (bioNextButton) {
     bioNextButton.addEventListener("click", function () {
       let newIndex = currentBioSlideIndex + 1;
@@ -89,14 +87,12 @@ document.addEventListener("DOMContentLoaded", function () {
     projectSlides.forEach(slide => slide.classList.remove("active"));
     projectSlides[index].classList.add("active");
   }
-
   if (projectPrevButton) {
     projectPrevButton.addEventListener("click", function () {
       currentProjectSlide = (currentProjectSlide - 1 + projectSlides.length) % projectSlides.length;
       showProjectSlide(currentProjectSlide);
     });
   }
-
   if (projectNextButton) {
     projectNextButton.addEventListener("click", function () {
       currentProjectSlide = (currentProjectSlide + 1) % projectSlides.length;
@@ -117,14 +113,12 @@ document.addEventListener("DOMContentLoaded", function () {
     workSlides.forEach(slide => slide.classList.remove("active"));
     workSlides[index].classList.add("active");
   }
-
   if (workPrevButton) {
     workPrevButton.addEventListener("click", function () {
       currentWorkSlide = (currentWorkSlide - 1 + workSlides.length) % workSlides.length;
       showWorkSlide(currentWorkSlide);
     });
   }
-
   if (workNextButton) {
     workNextButton.addEventListener("click", function () {
       currentWorkSlide = (currentWorkSlide + 1) % workSlides.length;
@@ -145,14 +139,12 @@ document.addEventListener("DOMContentLoaded", function () {
     volSlides.forEach(slide => slide.classList.remove("active"));
     volSlides[index].classList.add("active");
   }
-
   if (volPrevButton) {
     volPrevButton.addEventListener("click", function () {
       currentVolSlide = (currentVolSlide - 1 + volSlides.length) % volSlides.length;
       showVolSlide(currentVolSlide);
     });
   }
-
   if (volNextButton) {
     volNextButton.addEventListener("click", function () {
       currentVolSlide = (currentVolSlide + 1) % volSlides.length;
@@ -171,7 +163,6 @@ document.addEventListener("DOMContentLoaded", function () {
     eduSlides.forEach(slide => slide.classList.remove("active"));
     eduSlides[index].classList.add("active");
   }
-
   // Auto-rotate education slides every 5 seconds
   setInterval(() => {
     currentEduSlide = (currentEduSlide + 1) % eduSlides.length;
@@ -204,26 +195,23 @@ document.addEventListener("DOMContentLoaded", function () {
     gallerySlides[rightIndex].classList.add("right");
     gallerySlides[rightIndex].style.display = "block";
   }
-
   if (galleryPrevButton) {
     galleryPrevButton.addEventListener("click", function () {
       currentGalleryIndex = (currentGalleryIndex - 1 + gallerySlides.length) % gallerySlides.length;
       updateGallery();
     });
   }
-
   if (galleryNextButton) {
     galleryNextButton.addEventListener("click", function () {
       currentGalleryIndex = (currentGalleryIndex + 1) % gallerySlides.length;
       updateGallery();
     });
   }
+  updateGallery();
 
-
-
-
-
-  // ROTATING BEARING: Ferris Wheel–Style Animation (Logos Remain Upright)
+  /* ====================================================
+     ROTATING BEARING: Ferris Wheel–Style Animation (Logos Remain Upright)
+  ==================================================== */
   const bearing = document.querySelector(".rotating-bearing");
   const wrappers = bearing.querySelectorAll(".bearing-logo-wrapper");
   const totalLogos = wrappers.length;
@@ -251,16 +239,4 @@ document.addEventListener("DOMContentLoaded", function () {
     requestAnimationFrame(animate);
   }
   requestAnimationFrame(animate);
-
-
-
-
-
-  
-
-
-
-
-  // Initialize the gallery display
-  updateGallery();
 });

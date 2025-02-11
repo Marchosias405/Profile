@@ -552,8 +552,10 @@ section {
   margin: 0 auto 40px;
   height: 300px;
   overflow: hidden;
-  border-radius: 10px;
+  
   background: transparent;
+  border-radius: 0;
+  overflow: visible;
 }
 
 .gallery-slider {
@@ -577,6 +579,8 @@ section {
   opacity: 0.7;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, transparent 45%, black 55%, black 100%);
   mask-image: linear-gradient(to right, transparent 0%, transparent 45%, black 55%, black 100%);
+  
+  
 }
 
 /* Center Gallery Slide (Active) */
@@ -607,7 +611,25 @@ section {
   object-position: center;
   display: block;
   border-radius: 10px;
+  margin-bottom: -5px;
+  
 }
+
+.gallery-slide.left img,
+.gallery-slide.right img {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: -5px;  /* This may help expose the rounding if it's still being cut off */
+}
+
+
+.gallery-slide.left,
+.gallery-slide.right {
+  overflow: visible;
+  /* Adjust the top offset so the bottom of the slide extends further down */
+  top: 10px;  /* Reduced from 20px so the bottom area is less aligned with the active slide */
+}
+
 
 /* Gallery Navigation Buttons */
 .gallery-nav {

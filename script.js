@@ -219,6 +219,48 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+
+
+
+
+  // ROTATING BEARING: Ferris Wheel–Style Animation (Logos Remain Upright)
+  const bearing = document.querySelector(".rotating-bearing");
+  const wrappers = bearing.querySelectorAll(".bearing-logo-wrapper");
+  const totalLogos = wrappers.length;
+  // Calculate the radius by subtracting half the logo's size (assumed 30px for a 60px logo)
+  const radius = bearing.offsetWidth / 2 - 30;
+  
+  let startTime = null;
+  function animate(time) {
+    if (!startTime) startTime = time;
+    const elapsed = time - startTime;
+    // Full rotation every 8 seconds
+    const rotationAngle = (elapsed / 8000) * 360; // in degrees
+
+    wrappers.forEach((wrapper, index) => {
+      // Calculate the base angle for even distribution
+      const baseAngle = (360 / totalLogos) * index;
+      // Current angle includes the animation rotation
+      const currentAngle = baseAngle + rotationAngle;
+      // Position the wrapper at the center, translate it outward, and counter-rotate it exactly
+      wrapper.style.left = "50%";
+      wrapper.style.top = "50%";
+      wrapper.style.transform = `rotate(${currentAngle}deg) translate(${radius}px) rotate(-${currentAngle}deg)`;
+    });
+    
+    requestAnimationFrame(animate);
+  }
+  requestAnimationFrame(animate);
+
+
+
+
+
+  
+
+
+
+
   // Initialize the gallery display
   updateGallery();
 });

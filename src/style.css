@@ -770,22 +770,26 @@
   /* ===================================================================
      SECTION BOX (for Languages & Frameworks Section)
   =================================================================== */
-  .section-box {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 60px;
-    padding-bottom: 60px;
-    margin: 20px auto;
-    max-width: 800px;
-    overflow: visible;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .section-box:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
-  }
+/* White Box for Languages & Frameworks Section */
+.section-box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 80px;  /* Increased padding to give extra room */
+  margin: 20px auto;
+  max-width: 800px;
+  overflow: visible; /* Ensure overflow is visible */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Rotating Bearing Container */
+.rotating-bearing {
+  position: relative;
+  width: 400px;   /* Increase size if you want a larger circle */
+  height: 400px;
+  margin: 0 auto; /* Center it within the section-box */
+  overflow: visible;
+}
   
   /* ===================================================================
      RESPONSIVE STYLES

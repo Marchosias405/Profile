@@ -277,13 +277,14 @@ function TechSection() {
     if (!bearing) return;
     const wrappers = bearing.querySelectorAll(".bearing-logo-wrapper");
     const totalLogos = wrappers.length;
-    const radius = bearing.offsetWidth / 2 - 30; // Adjust based on logo size
+    // For a 400px container, adjust the radius so logos remain inside the white box.
+    const radius = bearing.offsetWidth / 2 - 80; // Adjust this value as needed
     let startTime = null;
 
     function animate(time) {
       if (!startTime) startTime = time;
       const elapsed = time - startTime;
-      const rotationAngle = (elapsed / 8000) * 360; // 8-second full rotation
+      const rotationAngle = (elapsed / 8000) * 360; // Full rotation in 8 seconds
       wrappers.forEach((wrapper, index) => {
         const baseAngle = (360 / totalLogos) * index;
         const currentAngle = baseAngle + rotationAngle;
@@ -301,6 +302,7 @@ function TechSection() {
       <h2>Languages and Frameworks</h2>
       <div className="section-box">
         <div className="rotating-bearing" ref={bearingRef}>
+          {/* Your logos here */}
           <div className="bearing-logo-wrapper">
             <img src="images/reactlogo.png" className="bearing-logo" alt="React" />
           </div>
@@ -325,6 +327,7 @@ function TechSection() {
     </section>
   );
 }
+
 
 // -------------------------
 // WORK EXPERIENCE SECTION
